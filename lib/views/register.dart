@@ -10,10 +10,10 @@ class RegisterPage extends StatefulWidget {
 
 class _RegisterPageState extends State<RegisterPage> {
   late String username;
-  late String emailAddress;
+  late String email_address;
   late String cin;
   late String password;
-  late String passwordConfirm;
+  late String password_confirm;
 
   @override
   Widget build(BuildContext context) {
@@ -35,7 +35,7 @@ class _RegisterPageState extends State<RegisterPage> {
               decoration: InputDecoration(hintText: 'Email Address'),
               onChanged: (value) {
                 setState(() {
-                  emailAddress = value;
+                  email_address = value;
                 });
               },
             ),
@@ -43,7 +43,7 @@ class _RegisterPageState extends State<RegisterPage> {
               decoration: InputDecoration(hintText: 'cin'),
               onChanged: (value) {
                 setState(() {
-                  emailAddress = value;
+                  cin= value;
                 });
               },
             ),
@@ -61,16 +61,16 @@ class _RegisterPageState extends State<RegisterPage> {
               decoration: InputDecoration(hintText: 'Confirm Password'),
               onChanged: (value) {
                 setState(() {
-                  passwordConfirm = value;
+                  password_confirm = value;
                 });
               },
             ),
             InkWell(
               onTap: () async {
                 // Check if passwords match before registration
-                if (password == passwordConfirm) {
-                  await HttpService.register(username, emailAddress, cin,
-                      password, passwordConfirm, context);
+                if (password == password_confirm) {
+                  await HttpService.register(username, email_address, cin,
+                      password, password_confirm, context);
                 } else {
                   // Show error or alert about password mismatch
                   // Here you could use a SnackBar or showDialog to display an error

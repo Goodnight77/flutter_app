@@ -33,10 +33,10 @@ class HttpService {
 
   static Future<void> register(
     String username,
-    String emailAddress,
+    String email_address,
     String cin,
     String password,
-    String passwordConfirm,
+    String password_confirm,
     context,
   ) async {
     try {
@@ -47,10 +47,10 @@ class HttpService {
         },
         body: jsonEncode(<String, String>{
           'username': username,
-          'emailAddress': emailAddress,
+          'email_address': email_address,
           'cin': cin,
           'password': password,
-          'passwordConfirm': passwordConfirm,
+          'password_confirm': password_confirm,
         }),
       );
 
